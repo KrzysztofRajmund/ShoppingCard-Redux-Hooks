@@ -1,0 +1,153 @@
+@import './variables';
+@import './functions';
+
+
+body {
+    font-family: Open Sans !important;
+    background:$primaryBackgroundColor !important;
+    color: #F8F8F8!important;
+    
+  }
+
+  .productDisplay{
+      margin:10px !important;
+  }
+
+  .card-body{
+    background-color:$cardBackgroundLightGrey;
+  }
+  .card-title {
+    color: $primaryTextDarkGrey;
+  }
+
+  //navbarMain
+
+  .navbarMain {
+      box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)!important;
+      background-color: rgba(26,26,26,0.9)!important;
+      color:$primaryTextLightGrey !important;
+  }
+
+  .navbarMain .nav-link {
+    color:$primaryTextLightGrey !important;
+}
+
+  
+//promotion slide
+.slideMainBtn{
+    @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
+    letter-spacing: $letterSpacing;
+    @include otherBtn();
+    background: $greenBtn;
+    
+}
+
+//MODAL OPEN
+.modal-open {
+    padding:0px !important;
+}
+
+// modal Product Details
+.modal-dialog {
+    margin-top: 5% !important;
+}
+// modal searchBar
+.modalSearch .modal-dialog {
+    margin-top: 0% !important ;
+}
+
+.modalSearch .modal-content {
+    background-color:transparent;
+    border: none;  
+}
+
+.searchFormControl .form-control {
+    width: 80% !important;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5);  
+}
+
+.searchFormControl input {
+    background-color: transparent !important;
+    color: $primaryTextLightGrey !important;
+    
+}
+
+//searchBar Card
+.containerSearchBar.card-body{
+    display: flex;
+    justify-content: space-between;
+    color:$primaryTextDarkGrey;
+    background-color:$primaryBackgroundColor;
+}
+
+//modal basket
+.basketModal .modal-dialog {
+  margin-right: 25px;
+}
+
+.containerSearchBar div{
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.cardBasket.card{
+    border-radius: 0px;
+}
+
+.cardGroup {
+    margin:15px !important; 
+    padding: 0px !important;
+}
+
+.colGroup {
+    padding: 0px !important;
+}
+
+.colGroupPromotion {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    
+}
+
+.card-body {
+    padding: 0px !important;
+    padding-left: 15px !important;
+}
+  
+
+hr {
+    background-color: #CCCCCC;
+    box-shadow: 0px 1px 3px 1px rgba(184, 184, 184, 0.6); 
+}
+
+footer {
+    letter-spacing: $letterSpacing;
+}
+
+
+.buttonBasket {
+    cursor:pointer;
+}
+
+//pagination
+.page-link{
+    color:$primaryTextDarkGrey !important;
+    background-color: $cardBackgroundLightGrey!important;    
+}
+.pagination{
+   
+    margin-left: 15px !important;
+    padding-left: 5px !important;
+    margin-right: 15px !important;
+    padding-right: 5px !important;
+   
+}
+
+/* MEDIA 767 */
+@media (max-width:450px) {
+
+
+    
+}

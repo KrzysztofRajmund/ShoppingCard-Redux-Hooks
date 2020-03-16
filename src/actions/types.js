@@ -1,0 +1,2 @@
+export const GET_ITEMS = 'GET_ITEMS';
+export const ADD_PRODUCT_TO_BASKET = 'ADD_PRODUCT_TO_BASKET';

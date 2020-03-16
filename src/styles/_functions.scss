@@ -1,0 +1,25 @@
+
+@mixin mainText($putTextColor,$putFontWeight,$putFontSize) {
+color: $putTextColor;
+font-weight: $putFontWeight;
+font-size: $putFontSize;
+    
+}
+
+@mixin inputBtn(){
+    border: 0.5px solid #2B2B28;
+    box-sizing: border-box;
+    border-radius: 1px; 
+
+    color: #6F6F6F;
+    background: $lightGreyBtn;
+    font-size:$subtitleOneFontSize;
+}
+
+
+@mixin otherBtn(){
+    border: 0.4px solid rgba(43, 43, 40, 0.4) !important;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
