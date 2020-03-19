@@ -11,7 +11,7 @@ import basketicon from "./navbar/assets/basketicon.png";
 //components
 import PaginationComponent from "./PaginationComponent";
 
-const ChosenForYou = ({ getItems, fetchReducer,addProductToBasket, basketReducer }) => {
+const ProductsDisplay = ({ getItems, fetchReducer,addProductToBasket, basketReducer }) => {
   useEffect(() => {
     getItems();
   }, []);
@@ -65,7 +65,7 @@ const ChosenForYou = ({ getItems, fetchReducer,addProductToBasket, basketReducer
   );
 };
 
-ChosenForYou.propTypes = {
+ProductsDisplay.propTypes = {
   getItems: PropTypes.func.isRequired,
   addProductToBasket: PropTypes.func.isRequired,
   fetchReducer: PropTypes.array.isRequired,
@@ -77,4 +77,4 @@ const mapStateToProps = state => ({
   basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect(mapStateToProps, { getItems, addProductToBasket })(ChosenForYou);
+export default connect(mapStateToProps, { getItems, addProductToBasket })(ProductsDisplay);

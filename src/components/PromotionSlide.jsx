@@ -5,14 +5,20 @@ import { Carousel, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItems } from "../actions/fetchActions";
+import { addProductToBasket } from "../actions/basketActions";
+//router dom
 import { Link } from "react-router-dom";
 //assets
 import basketicon from "./navbar/assets/basketicon.png";
 
-const PromotionSlide = ({ getItems, fetchReducer }) => {
+const PromotionSlide = ({ getItems, fetchReducer,addProductToBasket, basketReducer }) => {
   useEffect(() => {
     getItems();
   }, []);
+
+  const addProduct = item => {
+    addProductToBasket(item);
+  };
 
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
@@ -36,7 +42,7 @@ const PromotionSlide = ({ getItems, fetchReducer }) => {
       <Carousel.Caption>
         <h3>{item.name}</h3>
         <h4>${item.price.toFixed(2)}</h4>
-        <Button className="slideMainBtn" type="button" key={item.id}>
+        <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item)}>
           <img
             src={basketicon}
             alt="basket img"
@@ -63,11 +69,14 @@ const PromotionSlide = ({ getItems, fetchReducer }) => {
 
 PromotionSlide.propTypes = {
   getItems: PropTypes.func.isRequired,
-  fetchReducer: PropTypes.array.isRequired
+  addProductToBasket: PropTypes.func.isRequired,
+  fetchReducer: PropTypes.array.isRequired,
+  basketReducer: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-  fetchReducer: state.fetchReducer.items
+  fetchReducer: state.fetchReducer.items,
+  basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect(mapStateToProps, { getItems })(PromotionSlide);
+export default connect(mapStateToProps, { getItems, addProductToBasket })(PromotionSlide);
