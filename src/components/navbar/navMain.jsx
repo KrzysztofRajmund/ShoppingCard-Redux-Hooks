@@ -31,6 +31,7 @@ const NavMain = ({
     getItems();
   }, []);
 
+
   //modal search
   const [show, setShow] = useState(false);
   const handleClose = () => {
@@ -71,15 +72,17 @@ const NavMain = ({
   const handleShowBasket = () => {
     setShowBasket(true);
   };
-
-  const addProduct = product => {
-    addProductToBasket(product);
+    
   
-  };
+  const addProduct = (product) => {
+    addProductToBasket(product);
+    };
 
+ 
   const handleCloseBasket = () => {
     setShowBasket(false);
   };
+
 
   return (
     <>
@@ -103,7 +106,8 @@ const NavMain = ({
                   width="20px"
                 ></img>
                 <Badge pill variant="success">
-                  {basketReducer.length}
+                {basketReducer.length}
+                {console.log(basketReducer.length,"basket reducer length")}
                 </Badge>
               </Button>
             </Nav.Link>

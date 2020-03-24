@@ -14,7 +14,7 @@ export default function (state = initialState,action) {
 
             return{
                 ...state,
-                basketProducts: payload,            
+                basketProducts:[...state.basketProducts, payload],           
             }
         default:
             return state;
