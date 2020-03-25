@@ -14,5 +14,6 @@ ReactDOM.render(<BrowserRouter><Routing /></BrowserRouter>, document.getElementB
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+//1.COUNT BASKET!!!
 
 

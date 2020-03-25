@@ -107,7 +107,6 @@ const NavMain = ({
                 ></img>
                 <Badge pill variant="success">
                 {basketReducer.length}
-                {console.log(basketReducer.length,"basket reducer length")}
                 </Badge>
               </Button>
             </Nav.Link>
@@ -181,7 +180,7 @@ const NavMain = ({
         onHide={handleCloseBasket}
       >
         <Modal.Body closeButton>
-          <Basket />
+          <Basket basketProducts={basketReducer} />
         </Modal.Body>
       </Modal>
     </>

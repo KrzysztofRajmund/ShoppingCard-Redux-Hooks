@@ -7,14 +7,18 @@ import { addProductToBasket } from "../actions/basketActions";
 import { Card } from "react-bootstrap";
 
 const Basket = ({ basketReducer }) => {
+
+
   const [basketItems, setBasketItems] = useState(basketReducer);
 
   const removeHandler = (item,index) => {
    
-   const pos = basketItems.indexOf(item);
-    basketItems.splice(pos, 1);
-      setBasketItems(basketItems.filter(el => el.id !== item.id));
+  //  const posItem = basketItems.indexOf(item);
+  //  setBasketItems(basketItems.splice(posItem, 1));
+  //  console.log("setBasketItems Splice", basketItems)
+   setBasketItems(basketItems.filter(el => el.id !== item.id));
   };
+  basketReducer.splice(0, basketReducer.length, ...basketItems);
 
   return (
     <>
@@ -49,7 +53,7 @@ const Basket = ({ basketReducer }) => {
       )}
       <Card className="cardBasket">
         <Card.Body className="containerSearchBar pl-1 pr-1">
-          ${basketReducer.reduce((a, b) => a + b.price, 0).toFixed(2)}
+          ${basketItems.reduce((a, b) => a + b.price, 0).toFixed(2)}
         </Card.Body>
       </Card>
     </>
