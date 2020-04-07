@@ -16,9 +16,9 @@ const PromotionSlide = ({ getItems, fetchReducer,addProductToBasket, basketReduc
     getItems();
   }, []);
 
-  const addProduct = item => {
-    addProductToBasket(item);
-  };
+  const addProduct = (product,basketReducer) => {
+    addProductToBasket(product,basketReducer) 
+    };
 
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
@@ -42,7 +42,7 @@ const PromotionSlide = ({ getItems, fetchReducer,addProductToBasket, basketReduc
       <Carousel.Caption>
         <h3>{item.name}</h3>
         <h4>${item.price.toFixed(2)}</h4>
-        <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item)}>
+        <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item, basketReducer)}>
           <img
             src={basketicon}
             alt="basket img"

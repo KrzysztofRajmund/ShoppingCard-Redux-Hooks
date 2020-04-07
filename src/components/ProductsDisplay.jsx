@@ -16,9 +16,9 @@ const ProductsDisplay = ({ getItems, fetchReducer,addProductToBasket, basketRedu
     getItems();
   }, []);
 
-  const addProduct = item => {
-    addProductToBasket(item);
-  };
+  const addProduct = (product,basketReducer) => {
+    addProductToBasket(product,basketReducer) 
+    };
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +41,7 @@ const ProductsDisplay = ({ getItems, fetchReducer,addProductToBasket, basketRedu
             height="auto"
             width="auto"
           />
-          <Card.Body onClick={() => addProduct(item)}>
+          <Card.Body onClick={() => addProduct(item,basketReducer)}>
             <Card.Title>
               {item.name} ${item.price.toFixed(2)}
             </Card.Title>

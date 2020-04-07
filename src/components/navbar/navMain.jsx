@@ -74,10 +74,10 @@ const NavMain = ({
   };
     
   
-  const addProduct = (product) => {
-    addProductToBasket(product);
+  const addProduct = (product,basketReducer) => {
+    addProductToBasket(product,basketReducer) 
     };
-
+   
  
   const handleCloseBasket = () => {
     setShowBasket(false);
@@ -157,7 +157,7 @@ const NavMain = ({
 
                   <div>
                     <button disabled>-10%</button>
-                    <button onClick={() => addProduct(search)}>
+                    <button onClick={() => addProduct(search,basketReducer)}>
                       <img
                         src={basketicon}
                         alt="basket img"
